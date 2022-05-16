@@ -70,10 +70,12 @@ Perhatikan bahwa uji independensi Chi-square hanya dapat dilakukan bila frekwens
 
 ## Statistik Uji
 
-Kita telah memilki frekwensi pengamatan dan harapan. Kita perlu untuk membandingkan frekwensi frekwesni ini untuk menentukan apakah frekwensi frekwensi berbeda secara sigfinikan. Perbedaan antara frekwensi pengamatan dan frekwensi harapan, disebut dengan statistika uji ( t-stat) dan dinyatakan dengan $\chi^2$  dihitung sebagai berikut:
+Kita telah memilki frekwensi pengamatan dan harapan. Kita perlu untuk membandingkan frekwensi frekwesni ini untuk menentukan apakah frekwensi frekwensi berbeda secara sigfinikan. Perbedaan antara frekwensi pengamatan dan frekwensi harapan, disebut dengan statistika uji ( t-statistik) dan dinyatakan dengan $\chi^2$  dihitung sebagai berikut:
+
 $$
 \chi^2 = \sum_{i, j} \frac{\big(O_{ij} - E_{ij}\big)^2}{E_{ij}}
 $$
+
 dimana $O$  menyatakan frekwensi pengamatan dan $E$   frekwensi harapan. Mari kita hitung dari contoh diatas sesuai dengan formula berikut:
 
 - dalam sub group athlete dan non-smoker $\frac{(14 - 9)^2}{9} = 2.78$ 
