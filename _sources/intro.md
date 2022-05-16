@@ -191,6 +191,15 @@ Jika  [*p* value](https://www.reneshbedre.com/blog/how-to-calculate-p-value.html
 
 
 
+# Tabel Chi-square
+
+```{figure} ./images/chitable.png
+---
+height: 450px
+name: directive-fig
+---
+Tabel Chi-square
+```
 
 
 
