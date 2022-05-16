@@ -93,9 +93,11 @@ Statistik uji sendiri tidak cukup  untuk menyimpulkan independensi atau kebergan
 Jika statistik uji diatas nilai kritis, itu berarti bahwa kemungkinan mengamati perbedaan antara frekuensi yang diamati dan yang diharapkan tidak mungkin terjadi. Dengan kata lain, jika statistik uji di bawah nilai kritis, itu berarti kemungkinan untuk mengamati perbedaan seperti itu. Jika kemungkinan untuk mengamati perbedaan ini, kita tidak dapat menolak hipotesis bahwa kedua variabel itu independen, jika tidak, kita dapat menyimpulkan bahwa ada hubungan antara variabel-variabel tersebut.
 
 Nilai kritis dapat ditemukan pada tabel statistik distribusi chi-square dan bergantung pada tingkat signifikan, dinyatakan dengan $\alpha$, dan derajat kebebasan dinyatakan dengan $ df$ . Tingkat signifikan biasanya ditetapkan 5% . Derajat kebebasan untuk uji Chi-square dari independesni ditemukan sebagai berikut:
+
 $$
 df = (\text{banyaknya baris} - 1) \cdot (\text{banyaknya kolom} - 1)
 $$
+
 Pada contoh, derajat kebebasan adalah $ df=(2−1)⋅(2−1)=1 $  karena ada dua baris dan dua kolom pada tabel  contingency 
 
 Kita sekarang memiliki semua informasi yang diperlukan untuk menemukan nilai kritis pada tabel Chi-Square $\alpha=0.05$ dn $df=1$ . Untuk menemukan nilai kritis kita perlu mencari baris $df=1$ dan kolom $\chi^2_{0.050}$  karena $\alpha =0.05$  dalam gamber dibawah berikut.  Nilai kritisnya adalah 3.84146
@@ -145,9 +147,11 @@ Uji Fisher’s exact tabel contingency  2 ✕ 2 contingency dihitung dengan
 |                     | a+c              | b+d              | N=a+b+c+d |
 
  one-tailed p value dihitung dengan
+
 $$
 p=\frac{(a+b) !(c+d) !(a+c) !(b+d) !}{N ! a ! b ! c ! d !}
 $$
+
 dengan 
 
 $p $ = nilai p sesungguhnya ($p$ value exact) 
@@ -171,6 +175,7 @@ $$
 Untuk mendapatkan Odds Ratio sesungguhnya perlu dilakukan exponential sehingga 
 
 $\alpha$ % tingkat kepercayaan (confidence interval:) 
+
 $$
 exp(\log ({O R}) \pm Z_{\alpha/2} * \sqrt{\frac{1}{a}+\frac{1}{b}+\frac{1}{c}+\frac{1}{d}})
 $$

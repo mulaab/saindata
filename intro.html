@@ -478,11 +478,12 @@ $<span class="math notranslate nohighlight">\(
 <h2>Nilai kritis<a class="headerlink" href="#nilai-kritis" title="Permalink to this headline">¶</a></h2>
 <p>Statistik uji sendiri tidak cukup  untuk menyimpulkan independensi atau kebergantungan antara dua variabel. Seperti disebutkan sebelumnya, statistik uji  harus dibandingan dengan nilai kritis untuk menentukan apakah selish atau beda tersebut besar atau kecil. Seseorang tidak dapat mengatakan bahwa statistik uji adalah besar atau kecil tanpa menempatkannya dalam perspektif dengan nilai kritis.</p>
 <p>Jika statistik uji diatas nilai kritis, itu berarti bahwa kemungkinan mengamati perbedaan antara frekuensi yang diamati dan yang diharapkan tidak mungkin terjadi. Dengan kata lain, jika statistik uji di bawah nilai kritis, itu berarti kemungkinan untuk mengamati perbedaan seperti itu. Jika kemungkinan untuk mengamati perbedaan ini, kita tidak dapat menolak hipotesis bahwa kedua variabel itu independen, jika tidak, kita dapat menyimpulkan bahwa ada hubungan antara variabel-variabel tersebut.</p>
-<p>Nilai kritis dapat ditemukan pada tabel statistik distribusi chi-square dan bergantung pada tingkat signifikan, dinyatakan dengan <span class="math notranslate nohighlight">\(\alpha\)</span>, dan derajat kebebasan dinyatakan dengan <span class="math notranslate nohighlight">\( df\)</span> . Tingkat signifikan biasanya ditetapkan 5% . Derajat kebebasan untuk uji Chi-square dari independesni ditemukan sebagai berikut:
-$<span class="math notranslate nohighlight">\(
+<p>Nilai kritis dapat ditemukan pada tabel statistik distribusi chi-square dan bergantung pada tingkat signifikan, dinyatakan dengan <span class="math notranslate nohighlight">\(\alpha\)</span>, dan derajat kebebasan dinyatakan dengan <span class="math notranslate nohighlight">\( df\)</span> . Tingkat signifikan biasanya ditetapkan 5% . Derajat kebebasan untuk uji Chi-square dari independesni ditemukan sebagai berikut:</p>
+<div class="math notranslate nohighlight">
+\[
 df = (\text{banyaknya baris} - 1) \cdot (\text{banyaknya kolom} - 1)
-\)</span><span class="math notranslate nohighlight">\(
-Pada contoh, derajat kebebasan adalah \)</span> df=(2−1)⋅(2−1)=1 $  karena ada dua baris dan dua kolom pada tabel  contingency</p>
+\]</div>
+<p>Pada contoh, derajat kebebasan adalah <span class="math notranslate nohighlight">\( df=(2−1)⋅(2−1)=1 \)</span>  karena ada dua baris dan dua kolom pada tabel  contingency</p>
 <p>Kita sekarang memiliki semua informasi yang diperlukan untuk menemukan nilai kritis pada tabel Chi-Square <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> dn <span class="math notranslate nohighlight">\(df=1\)</span> . Untuk menemukan nilai kritis kita perlu mencari baris <span class="math notranslate nohighlight">\(df=1\)</span> dan kolom <span class="math notranslate nohighlight">\(\chi^2_{0.050}\)</span>  karena <span class="math notranslate nohighlight">\(\alpha =0.05\)</span>  dalam gamber dibawah berikut.  Nilai kritisnya adalah 3.84146</p>
 <div class="figure align-default" id="directive-fig">
 <a class="reference internal image-reference" href="_images/chi.png"><img alt="_images/chi.png" src="_images/chi.png" style="height: 150px;" /></a>
@@ -534,11 +535,12 @@ Pada contoh, derajat kebebasan adalah \)</span> df=(2−1)⋅(2−1)=1 $  karena
 </tr>
 </tbody>
 </table>
-<p>one-tailed p value dihitung dengan
-$<span class="math notranslate nohighlight">\(
+<p>one-tailed p value dihitung dengan</p>
+<div class="math notranslate nohighlight">
+\[
 p=\frac{(a+b) !(c+d) !(a+c) !(b+d) !}{N ! a ! b ! c ! d !}
-\)</span>$
-dengan</p>
+\]</div>
+<p>dengan</p>
 <p><span class="math notranslate nohighlight">\(p \)</span> = nilai p sesungguhnya (<span class="math notranslate nohighlight">\(p\)</span> value exact)</p>
 <div class="section" id="odds-ratio-or">
 <h3>Odds Ratio (OR)<a class="headerlink" href="#odds-ratio-or" title="Permalink to this headline">¶</a></h3>
@@ -553,10 +555,11 @@ $<span class="math notranslate nohighlight">\(
 \log ({O R}) \pm Z_{\alpha/2}* \sqrt{\frac{1}{a}+\frac{1}{b}+\frac{1}{c}+\frac{1}{d}}
 \)</span>$
 Untuk mendapatkan Odds Ratio sesungguhnya perlu dilakukan exponential sehingga</p>
-<p><span class="math notranslate nohighlight">\(\alpha\)</span> % tingkat kepercayaan (confidence interval:)
-$<span class="math notranslate nohighlight">\(
+<p><span class="math notranslate nohighlight">\(\alpha\)</span> % tingkat kepercayaan (confidence interval:)</p>
+<div class="math notranslate nohighlight">
+\[
 exp(\log ({O R}) \pm Z_{\alpha/2} * \sqrt{\frac{1}{a}+\frac{1}{b}+\frac{1}{c}+\frac{1}{d}})
-\)</span>$</p>
+\]</div>
 <p>dimnana <span class="math notranslate nohighlight">\(z_{\alpha/2}\)</span> adalah nilai kritis dari distribusi  pada <span class="math notranslate nohighlight">\(\alpha/2\)</span> . Untuk  confidence level  95%, <span class="math notranslate nohighlight">\(\alpha\)</span> adalah 0.05 dan nilai kritisnya adalah 1.96</p>
 <p>Logarithma formula diatas adalah  natural logarithms, yaitu, log base e, kadangkala dinyatakan dengan <span class="math notranslate nohighlight">\(ln()\)</span></p>
 <p>Semakin tinggi tingkat kepercayaan (confidence interval), semakin yakin Anda bahwa interval tersebut berisi rasio odds yang sebenarnya.</p>
