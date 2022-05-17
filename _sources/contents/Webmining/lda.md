@@ -1,4 +1,4 @@
-# Pengantar
+# Pemodelan Topik  LDA
 
 Pada tutorial ini, kita akan belajar tentang pemodelan topik, beberapa aplikasinya dan juga lebih mendalam dibahas salah satu model tentang teknik Latent Direchlet Allocation (LDA)
 
