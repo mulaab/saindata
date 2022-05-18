@@ -52,7 +52,7 @@ Perhatikan bahwa kami memilih variabel biner (variabel biner = variabel kualitat
 
 ## Frekwensi Harapan
 
-Ingat bahwa untuk uji independensi Chi-square kita butuh menentukan apaka jumlah pengamatan adalah sangat signifikan berbeda dari jumlah yang kita harapkan jika tidak ada hubungan antara dua variabel. Kita memiliki jumlah yang diamati (lihat tabel di atas), jadi kami sekarang perlu menghitung jumlah yang diharapkan dalam kasus variabel independen. Frekuensi yang diharapkan ini dihitung untuk setiap subkelompok satu per satu dengan rumus berikut::
+Ingat bahwa untuk uji independensi Chi-square kita butuh menentukan apakah jumlah pengamatan adalah sangat signifikan berbeda dari jumlah yang kita harapkan jika tidak ada hubungan antara dua variabel. Kita memiliki jumlah yang diamati (lihat tabel di atas), jadi kami sekarang perlu menghitung jumlah yang diharapkan dalam kasus variabel independen. Frekuensi yang diharapkan ini dihitung untuk setiap subkelompok satu per satu dengan rumus berikut::
 
 
 $$
@@ -110,7 +110,7 @@ Kita sekarang memiliki semua informasi yang diperlukan untuk menemukan nilai kri
 
 ```{figure} ./images/chi.png
 ---
-height: 150px
+height: 200px
 name: directive-fig
 ---
 Nilai kritis!
@@ -199,7 +199,7 @@ Jika  [*p* value](https://www.reneshbedre.com/blog/how-to-calculate-p-value.html
 
 ```{figure} ./images/chitable.png
 ---
-height: 450px
+height: 500px
 name: directive-fig
 ---
 Tabel Chi-square
