@@ -55,6 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="chi.html" />
     <link rel="prev" title="Seleksi Fitur Chi-squre" href="seleksifitur.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -472,8 +473,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Salah satu metode seleksi fitur yang bias digunakan pada data teks adalah seleksi fitur Chi-Square.Uji <span class="math notranslate nohighlight">\(\chi^2\)</span> digunakan pada statistik untuk menguji independensi dari dua kejadian (variabel) Khususnya dalam seleksi fitur, metode tersebut digunakan untuk menguji apakah suatu term tertentu yang ada dan kelas tertentu yang ada adalah saling bebas.Secara umum dari dokumen <span class="math notranslate nohighlight">\(D\)</span> yang tersedia, kita hitung nilai-nilai berikut untuk setiap term dan merangking tersebut sesuai dengan skor masing-masing</p>
 <div class="math notranslate nohighlight">
 \[
-\chi^2(D, t, c) = \sum_{e_t \in \{0, 1\}} \sum_{e_c \in \{0, 1\}} 
-\frac{ ( N_{e_te_c} - E_{e_te_c} )^2 }{ E_{e_te_c} }\]</div>
+\chi^2(O, t, c) = \sum_{e_t \in \{0, 1\}} \sum_{e_c \in \{0, 1\}} 
+\frac{ ( O_{e_te_c} - E_{e_te_c} )^2 }{ E_{e_te_c} }\]</div>
 <p>dimana</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(N\)</span> adalah  frekwensi pengamatan dan <span class="math notranslate nohighlight">\(E\)</span> adalah frekwensi harapan</p></li>
@@ -764,6 +765,10 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </tbody>
 </table>
+<div class="figure align-default" id="directive-fig">
+<a class="reference internal image-reference" href="../../_images/featurebaru.png"><img alt="../../_images/featurebaru.png" src="../../_images/featurebaru.png" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Nilai kritis!</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="kasus-berita">
@@ -771,6 +776,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_20newsgroups</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
  <span class="c1"># newsgroups categories</span>
 <span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alt.atheism&#39;</span><span class="p">,</span><span class="s1">&#39;talk.religion.misc&#39;</span><span class="p">,</span>
               <span class="s1">&#39;comp.graphics&#39;</span><span class="p">,</span><span class="s1">&#39;sci.space&#39;</span><span class="p">]</span>
@@ -787,6 +793,15 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
 <span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">lowercase</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">posts</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="n">X</span><span class="o">.</span><span class="n">shape</span>
+<span class="c1">#vec=X.toarray()</span>
+
+<span class="c1">#datanews=pd.Dataframe(vec,columns = vectorizer.get_feature_names())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2034, 26576)
 </pre></div>
 </div>
 </div>
@@ -806,7 +821,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">wscores</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">(),</span><span class="n">chi2score</span><span class="p">))</span>
 <span class="n">wchi2</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">wscores</span><span class="p">,</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> 
-<span class="n">topchi2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">wchi2</span><span class="p">[</span><span class="o">-</span><span class="mi">25</span><span class="p">:]))</span>
+<span class="n">topchi2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">wchi2</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]))</span>
 <span class="n">x</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">topchi2</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="n">topchi2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">barh</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">topchi2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">align</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">.2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
@@ -818,7 +833,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/chisquare_28_0.png" src="../../_images/chisquare_28_0.png" />
+<img alt="../../_images/chisquare_29_0.png" src="../../_images/chisquare_29_0.png" />
 </div>
 </div>
 </div>
@@ -854,6 +869,13 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Seleksi Fitur Chi-squre</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="chi.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
