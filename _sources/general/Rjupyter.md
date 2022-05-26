@@ -81,3 +81,8 @@ Click on ‘Run’ and you’ll get the following DataFrame:
 ```
 
 Categories[R](https://datatofish.com/category/r/)
+
+
+
+https://notebook.community/pioneers/topgear/ipython-in-depth/examples/Builtin%20Extensions/R%20Magics
+

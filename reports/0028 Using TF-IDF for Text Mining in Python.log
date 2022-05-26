@@ -28,10 +28,10 @@ pd.set_option('display.notebook_repr_html', False)
 sys.version
 ------------------
 
-[1;36m  File [1;32m"C:\Users\mulaab\AppData\Local\Temp/ipykernel_6204/317655414.py"[1;36m, line [1;32m8[0m
+[1;36m  File [1;32m"C:\Users\mulaab\AppData\Local\Temp/ipykernel_6792/317655414.py"[1;36m, line [1;32m8[0m
 [1;33m    pd.set_option('display.notebook_repr_html', False)[0m
 [1;37m           ^[0m
 [1;31mSyntaxError[0m[1;31m:[0m from __future__ imports must occur at the beginning of the file
 
-SyntaxError: from __future__ imports must occur at the beginning of the file (Temp/ipykernel_6204/317655414.py, line 8)
+SyntaxError: from __future__ imports must occur at the beginning of the file (Temp/ipykernel_6792/317655414.py, line 8)
 

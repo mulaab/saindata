@@ -53,6 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Pendugaa/Estimasi Parameter Populasi" href="Cipomean.html" />
     <link rel="prev" title="Implementasi Seleksi fitur Chi-Square" href="chisquare.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -116,6 +117,23 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Chi-square menggunakan R
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Statistik
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Cipomean.html">
+   Pendugaa/Estimasi Parameter Populasi
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ConfidenceIntervaltwopopulationproportions.html">
+   Interval Kepercayaan untuk selisih antara dua Proporsi
   </a>
  </li>
 </ul>
@@ -381,6 +399,191 @@ X-squared = 5.5569, df = 1, p-value = 0.01841
 <div class="section" id="kesimpulan">
 <h2>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this headline">¶</a></h2>
 <p>Berdasarkan hasil  nilai chi-square hitung 5,5569. Kita telah mendapatkan p-Value lebih kecil dari tingkat signifikansi 0,05, sehingga  menolak hipotesis nol (null hypothesis ) dan  menyimpulkan bahwa kedua variabel tersebut adalah saling terkait (dependent)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">from</span> <span class="n">functools</span> <span class="n">import</span> <span class="n">partial</span>
+<span class="n">from</span> <span class="n">rpy2.ipython</span> <span class="n">import</span> <span class="n">html</span>
+<span class="n">html.html_rdataframe</span><span class="o">=</span><span class="nf">partial</span><span class="p">(</span><span class="n">html.html_rdataframe</span><span class="p">,</span> <span class="n">table_class</span><span class="o">=</span><span class="s">&quot;docutils&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">parse</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">srcfile</span> <span class="o">=</span> <span class="n">src</span><span class="p">):</span> <span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span> <span class="n">unexpected</span> <span class="n">symbol</span>
+<span class="mi">1</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">functools</span>
+         <span class="o">^</span>
+<span class="ne">Traceback</span>:
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">from</span> <span class="n">rpy2.robjects.packages</span> <span class="n">import</span> <span class="n">importr</span>
+<span class="n">utils</span> <span class="o">=</span> <span class="nf">importr</span><span class="p">(</span><span class="s">&#39;utils&#39;</span><span class="p">)</span>
+
+<span class="n">dataf</span> <span class="o">=</span> <span class="nf">utils.read_csv</span><span class="p">(</span><span class="s">&#39;https://raw.githubusercontent.com/jakevdp/PythonDataScienceHandbook/&#39;</span>
+                       <span class="s">&#39;master/notebooks/data/california_cities.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">import</span> <span class="n">rpy2.ipython.html</span>
+<span class="nf">rpy2.ipython.html.init_printing</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dataf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<emph>DataFrame</emph> with 482 rows and
+  14 columns:
+<table class="docutils">
+  <thead>
+    <tr class="rpy2_names">
+      <th></th>
+      <th></th>
+      <th>X</th>
+      <th>city</th>
+      <th>latd</th>
+      <th>longd</th>
+      <th>...</th>
+      <th>area_water_km2</th>
+      <th>area_water_percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="rpy2_rowname">0</td>
+        <td class="rpy2_names">1</td>
+      <td>0</td>
+      <td>Adelanto</td>
+      <td>34.57611111111112</td>
+      <td>-117.43277777777779</td>
+       <td>...</td>
+      <td>0.046</td>
+      <td>0.03</td>
+    </tr>
+    <tr>
+      <td class="rpy2_rowname">1</td>
+        <td class="rpy2_names">2</td>
+      <td>1</td>
+      <td>AgouraHills</td>
+      <td>34.15333333333333</td>
+      <td>-118.76166666666667</td>
+       <td>...</td>
+      <td>0.076</td>
+      <td>0.37</td>
+    </tr>
+    <tr>
+      <td class="rpy2_rowname">2</td>
+        <td class="rpy2_names">3</td>
+      <td>2</td>
+      <td>Alameda</td>
+      <td>37.75611111111111</td>
+      <td>-122.27444444444444</td>
+       <td>...</td>
+      <td>31.983</td>
+      <td>53.79</td>
+    </tr>
+    <tr>
+      <td class="rpy2_rowname">3</td>
+        <td class="rpy2_names">4</td>
+      <td>3</td>
+      <td>Albany</td>
+      <td>37.886944444444445</td>
+      <td>-122.29777777777778</td>
+       <td>...</td>
+      <td>9.524</td>
+      <td>67.28</td>
+    </tr>
+    <tr>
+      <td class="rpy2_rowname">4</td>
+        <td class="rpy2_names">5</td>
+      <td>4</td>
+      <td>Alhambra</td>
+      <td>34.081944444444446</td>
+      <td>-118.135</td>
+       <td>...</td>
+      <td>0.003</td>
+      <td>0.01</td>
+    </tr>
+    <tr>
+      <td class="rpy2_rowname">5</td>
+        <td class="rpy2_names">6</td>
+      <td>5</td>
+      <td>AlisoViejo</td>
+      <td>33.575</td>
+      <td>-117.72555555555556</td>
+       <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td class="rpy2_rowname">6</td>
+        <td class="rpy2_names">7</td>
+      <td>6</td>
+      <td>Alturas</td>
+      <td>41.48722222222222</td>
+      <td>-120.5425</td>
+       <td>...</td>
+      <td>0.036000000000000004</td>
+      <td>0.57</td>
+    </tr>
+    <tr>
+      <td class="rpy2_rowname">7</td>
+        <td class="rpy2_names">8</td>
+      <td>7</td>
+      <td>AmadorCity</td>
+      <td>38.419444444444444</td>
+      <td>-120.82416666666666</td>
+       <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td class="rpy2_rowname">...</td>
+        <td class="rpy2_names">...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+       <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <td class="rpy2_rowname">480</td>
+        <td class="rpy2_names">481</td>
+      <td>480</td>
+      <td>Yucaipa</td>
+      <td>34.030277777777776</td>
+      <td>-117.04861111111111</td>
+       <td>...</td>
+      <td>0.013000000000000001</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <td class="rpy2_rowname">481</td>
+        <td class="rpy2_names">482</td>
+      <td>481</td>
+      <td>YuccaValley</td>
+      <td>34.13333333333333</td>
+      <td>-116.41666666666667</td>
+       <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
 </div>
 </div>
 
@@ -415,6 +618,13 @@ X-squared = 5.5569, df = 1, p-value = 0.01841
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Implementasi Seleksi fitur Chi-Square</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="Cipomean.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Pendugaa/Estimasi Parameter Populasi</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
