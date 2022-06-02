@@ -119,6 +119,11 @@ const thebe_selector_output = ".output, .cell_output"
    Chi-square menggunakan R
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="topikmodelinng.html">
+   Topic Modeling
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -380,8 +385,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p><a class="reference external" href="https://datascienceplus.com/topic-modeling-and-latent-dirichlet-allocation-lda/">https://datascienceplus.com/topic-modeling-and-latent-dirichlet-allocation-lda/</a></p>
 <p>implementasi</p>
 <p><a class="reference external" href="https://www.youtube.com/watch?v=BaM1uiCpj_E">https://www.youtube.com/watch?v=BaM1uiCpj_E</a></p>
-<p><a class="reference external" href="https://www.baeldung.com/cs/topic-modeling-coherence-score">https://www.baeldung.com/cs/topic-modeling-coherence-score</a>
-Pada tutorial ini, kita akan belajar tentang pemodelan topik, beberapa aplikasinya dan juga lebih mendalam dibahas salah satu model tentang teknik Latent Direchlet Allocation (LDA)</p>
+<p><a class="reference external" href="https://www.baeldung.com/cs/topic-modeling-coherence-score">https://www.baeldung.com/cs/topic-modeling-coherence-score</a></p>
+<p><a class="reference external" href="https://highdemandskills.com/topic-model-evaluation/">https://highdemandskills.com/topic-model-evaluation/</a></p>
+<p>Pada tutorial ini, kita akan belajar tentang pemodelan topik, beberapa aplikasinya dan juga lebih mendalam dibahas salah satu model tentang teknik Latent Direchlet Allocation (LDA)</p>
 <p>Untuk mempelajari tutorial ini diharapkan memahami terlebih dahulu distribusi probabilitas multivariate.</p>
 <div class="section" id="pemodelan-topik">
 <h2>2. Pemodelan Topik<a class="headerlink" href="#pemodelan-topik" title="Permalink to this headline">¶</a></h2>
@@ -404,6 +410,13 @@ Ringkasnya, Topic modeling adalah metode pembelajaran terawasi dan inputnya adal
 </div>
 <div class="section" id="applications">
 <h3>2.2. Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\text{perplexity}(\text{test set } w) =
+        \exp \left\{
+        - \frac{\mathcal L( w)}{\text{count of tokens}}
+        \right\}
+\]</div>
 <p>Topic modeling memiliki beberapa bentuk aplikasi yang menarik diantaranya adalah :</p>
 <ul class="simple">
 <li><p>Memahami bidang</p></li>

@@ -18,6 +18,9 @@ implementasi
 https://www.youtube.com/watch?v=BaM1uiCpj_E
 
 https://www.baeldung.com/cs/topic-modeling-coherence-score
+
+https://highdemandskills.com/topic-model-evaluation/
+
 Pada tutorial ini, kita akan belajar tentang pemodelan topik, beberapa aplikasinya dan juga lebih mendalam dibahas salah satu model tentang teknik Latent Direchlet Allocation (LDA)
 
 Untuk mempelajari tutorial ini diharapkan memahami terlebih dahulu distribusi probabilitas multivariate.
@@ -58,7 +61,12 @@ Apaa yang telah kita bahas adalah pemodelan topik yang  dapat digunakan untuk me
 
 ### 2.2. Applications
 
-
+$$
+\text{perplexity}(\text{test set } w) =
+        \exp \left\{
+        - \frac{\mathcal L( w)}{\text{count of tokens}}
+        \right\}
+$$
 
 Topic modeling memiliki beberapa bentuk aplikasi yang menarik diantaranya adalah :
 
